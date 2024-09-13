@@ -39,18 +39,22 @@ menuListItem.addEventListener("click", addToOrder)
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
-
+const orderItems = document.getElementById('order-items')
+const orderTotal = document.getElementById('order-total')
     // Create a list item for the order
-
+const order = document.createElement('li')
     // Set the text content of the list item to the item name
-
+order.textContent = itemName.target.textContent
     // Append the list item to the order items list
+orderItems.appendChild(order)
 
     // Calculate and update the total price
-
+let currentTotal = parseInt(orderTotal.textContent)
+currentTotal += 60
     // Update the text content of the order total element with the new total
-
+    orderTotal.textContent = currentTotal
 }
+
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
